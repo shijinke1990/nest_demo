@@ -1,12 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
-import { Inject } from '@nestjs/common';
 import { AppService } from './app.service';
+import { UserService } from './user/user.service';
 
 @Controller()
 export class AppController {
   constructor(
     private readonly appService: AppService,
-    @Inject('APP_NAME') private readonly appName: string[],
+    private readonly userService: UserService,
   ) {}
 
   @Get()
@@ -14,8 +14,8 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('appName')
-  getAppName(): string {
-    return this.appName.join(', ');
+  @Get('user/hello')
+  getUserHello(): string {
+    return this.userService.getHello();
   }
 }
