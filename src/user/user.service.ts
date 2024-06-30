@@ -2,10 +2,14 @@ import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { SettingService } from '../setting/setting.service';
+// import { ConfigModule } from 'src/config/config.module';
 
 @Injectable()
 export class UserService {
-  constructor(private settingService: SettingService) {}
+  constructor(
+    private settingService: SettingService,
+    // private configModule: ConfigModule,
+  ) {}
   create(createUserDto: CreateUserDto) {
     return 'This action adds a new user';
   }
@@ -27,6 +31,6 @@ export class UserService {
   }
 
   getHello(): string {
-    return 'n你怎么啦！！！！！！！';
+    return this.settingService.getHello();
   }
 }

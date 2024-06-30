@@ -23,4 +23,8 @@ export class SettingService {
   remove(id: number) {
     return `This action removes a #${id} setting`;
   }
+
+  getHello(): string {
+    return '大声道你好啊，我是settingService';
+  }
 }

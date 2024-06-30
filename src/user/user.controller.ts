@@ -45,4 +45,9 @@ export class UserController {
   getHello(): string {
     return 'Hello from User Controller! yi ge de  dddd ';
   }
+
+  @Get('doLove/1')
+  doLove(): string {
+    return this.userService.getHello();
+  }
 }

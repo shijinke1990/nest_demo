@@ -2,7 +2,7 @@
 import { Module } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserController } from './user.controller';
-import { SettingService } from '../setting/setting.service'; // 假设SettingService和UserService在同一目录
+import { SettingService } from '../setting/setting.service';
 
 @Module({
   controllers: [UserController],
